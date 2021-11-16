@@ -55,11 +55,12 @@ const game = () => {
   let userWin = 0;
   let computerWin = 0;
 
-  for (let gameCount = 0; gameCount < 5; gameCount++) {
+  for (let gameCount = 0; gameCount < 20; gameCount++) {
     console.log(gameCount);
-    const userInput = prompt(
-      "Please enter Rock, Paper or Scissor"
-    ).toLowerCase();
+    // FIXME
+    // const userInput = prompt(
+    //   "Please enter Rock, Paper or Scissor"
+    // ).toLowerCase();
     const computerResult = computerPlay();
     if (
       userInput !== "rock" &&

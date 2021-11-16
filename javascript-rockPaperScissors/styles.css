@@ -1,0 +1,58 @@
+/* TODO BONUS: consider using icons   */
+:root {
+  --off-white: #f9fcfb;
+  --red: #fd5e53;
+  --light-green: #b0eacd;
+  --green: #21bf73;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+#container {
+  display: flex;
+  border: 1px solid goldenrod;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#btn-wrapper {
+  display: flex;
+}
+
+.btn {
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+  color: var(--off-white);
+  background-color: var(--red);
+  border: 2px var(--light-green) solid;
+  font-size: 1.8em;
+  border-radius: 1em;
+}
+
+.btn:hover {
+  filter: brightness(97%);
+}
+
+.btn:active {
+  transform: scale(1.03);
+  box-shadow: 2px 1px 10px var(--green);
+}
+
+#output {
+  font-size: 3em;
+  color: var(--off-white);
+  text-shadow: 1px 1px 3px var(--red);
+  background-color: var(--light-green);
+  width: 600px;
+  text-align: center;
+  border-radius: 5px;
+  border-bottom: 2px var(--green) solid;
+  padding: 10px 0;
+}
