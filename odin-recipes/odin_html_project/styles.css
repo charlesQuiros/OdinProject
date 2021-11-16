@@ -1,0 +1,72 @@
+html {
+  font-size: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  color: white;
+}
+
+.header {
+  background: rgb(69, 214, 200);
+  margin: 20px 10px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-family: "Times New Roman", Times, serif, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 15px;
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 50px 0 0 0;
+}
+
+p {
+  font-size: 1.6rem;
+  text-align: left;
+  padding: 10px 100px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 3rem;
+  margin: 50px 0 0 0;
+}
+
+.list {
+  text-align: left;
+  padding-left: 100px;
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-size: 2rem;
+}
+
+.home {
+  display: block;
+  padding: 50px;
+  font-size: 1.5rem;
+}
