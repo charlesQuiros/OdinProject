@@ -71,6 +71,8 @@ const game = () => {
 
       const roundResult = calculateResults(userInput, computerResult);
 
+      checkVictory(userWin, computerWin);
+
       if (roundResult === 0) {
         document.querySelector(
           "#output"
@@ -86,8 +88,6 @@ const game = () => {
         ).textContent = `You Win! ${userInput} beats ${computerResult}.`;
         document.querySelector("#user-score").textContent = userWin + 1;
       }
-
-      checkVictory(userWin, computerWin);
     });
   });
 };
