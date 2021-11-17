@@ -1,3 +1,4 @@
+//computer chooses randomly
 const computerPlay = () => {
   const result = Math.floor(Math.random() * 3);
   switch (result) {
@@ -12,6 +13,7 @@ const computerPlay = () => {
   }
 };
 
+//player input and computer play are compared to declare a victory
 const calculateResults = (userInput, computerResult) => {
   switch (userInput) {
     case "rock":
@@ -41,50 +43,53 @@ const calculateResults = (userInput, computerResult) => {
   }
 };
 
-const determineWinner = (userWin, computerWin) => {
-  if (userWin > computerWin) {
-    return `You Win the Game! You won ${userWin} games and the computer won ${computerWin}.`;
-  } else if (userWin === computerWin) {
-    return `You Tied the Game! You won ${userWin} games and the computer won ${computerWin}.`;
+const checkVictory = (userWin, computerResult) => {
+  console.log(userWin, +" " + computerResult);
+  if (userWin === 5) {
+    document.querySelector("#victory").textContent = "You Win!";
+  } else if (computerResult === 5) {
+    document.querySelector("#victory").textContent = "You Lose!";
   } else {
-    return `You Lost the Game! You won ${userWin} games and the computer won ${computerWin}.`;
+    return;
   }
 };
 
+//where the game logic is initiated
 const game = () => {
-  let userWin = 0;
-  let computerWin = 0;
+  const userClick = document.querySelectorAll("button");
 
-  for (let gameCount = 0; gameCount < 20; gameCount++) {
-    console.log(gameCount);
-    // FIXME
-    // const userInput = prompt(
-    //   "Please enter Rock, Paper or Scissor"
-    // ).toLowerCase();
-    const computerResult = computerPlay();
-    if (
-      userInput !== "rock" &&
-      userInput !== "paper" &&
-      userInput !== "scissor"
-    ) {
-      console.log("Please type in a correct input: Rock, Paper, Scissor.");
-      game();
-    }
+  userClick.forEach((button) => {
+    button.addEventListener("click", () => {
+      let userWin = document.querySelector("#user-score").textContent;
+      let computerWin = document.querySelector("#pc-score").textContent;
 
-    const roundResult = calculateResults(userInput, computerResult);
+      userWin = parseInt(userWin, 10);
+      computerWin = parseInt(computerWin, 10);
 
-    if (roundResult === 0) {
-      console.log(`You Lost! ${computerResult} beats ${userInput}.`);
-      computerWin++;
-    } else if (roundResult === 1) {
-      console.log(`You Tied. ${computerResult} is equal to ${userInput}`);
-    } else if (roundResult === 2) {
-      console.log(`You Win! ${userInput} beats ${computerResult}`);
-      userWin++;
-    }
-  }
+      const computerResult = computerPlay();
+      const userInput = button.id;
 
-  console.log(determineWinner(userWin, computerWin));
+      const roundResult = calculateResults(userInput, computerResult);
+
+      if (roundResult === 0) {
+        document.querySelector(
+          "#output"
+        ).textContent = `You Lost! ${computerResult} beats ${userInput}.`;
+        document.querySelector("#pc-score").textContent = computerWin + 1;
+      } else if (roundResult === 1) {
+        document.querySelector(
+          "#output"
+        ).textContent = `You Tied. ${computerResult} is equal to ${userInput}`;
+      } else if (roundResult === 2) {
+        document.querySelector(
+          "#output"
+        ).textContent = `You Win! ${userInput} beats ${computerResult}.`;
+        document.querySelector("#user-score").textContent = userWin + 1;
+      }
+
+      checkVictory(userWin, computerWin);
+    });
+  });
 };
 
 game();

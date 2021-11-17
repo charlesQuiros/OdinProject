@@ -6,18 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="#" />
     <script src="practice.js" defer></script>
   </head>
   <body>
-    <!-- TODO create three buttons and a txt field -->
     <div id="container">
+      <div id="victory">
+        <p></p>
+      </div>
       <div id="btn-wrapper">
         <button class="btn" id="rock">Rock</button>
         <button class="btn" id="paper">Paper</button>
         <button class="btn" id="scissor">Scissor</button>
       </div>
       <div>
-        <p id="output">output</p>
+        <p id="output"></p>
+      </div>
+      <div id="score">
+        <div>
+          <h3>Your Score</h3>
+          <p id="user-score">0</p>
+        </div>
+
+        <div>
+          <h3>Computer Score</h3>
+          <p id="pc-score">0</p>
+        </div>
       </div>
     </div>
   </body>
