@@ -1,0 +1,29 @@
+:root {
+  --grid-num: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+#grid-bg {
+  margin: 150px auto;
+  height: 650px;
+  width: 650px;
+  background-color: white;
+  /* TODO consider making the box-shadow colors change over time */
+  box-shadow: 1px 5px 10px wheat;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-num), 1fr);
+  grid-template-rows: repeat(var(--grid-num), 1fr);
+}
+
+.grid-item {
+  height: 100%;
+  width: 100%;
+  border: 1px solid whitesmoke;
+}
