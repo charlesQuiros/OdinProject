@@ -1,5 +1,6 @@
 :root {
   --grid-num: 1;
+  --rainbow-color: "white";
 }
 
 * {
@@ -62,11 +63,12 @@ html {
 }
 
 .rainbow {
-  background-color: green;
+  background-color: var(--rainbow-color);
   border-radius: 50%;
 }
 
-.draw:hover {
+.pencil:hover,
+.rainbow:hover {
   animation-duration: 1s;
   animation-name: pulse;
   animation-iteration-count: infinite;
@@ -102,22 +104,28 @@ button {
   width: 100px;
   border: 1px solid salmon;
   border-radius: 5px;
+  color: salmon;
+  background-color: white;
+  opacity: 0.8;
 }
 
-/* TODO set up buttons */
-
-#wipe {
+button:hover {
+  box-shadow: 2px 2px 5px 1px wheat;
+  opacity: 1;
 }
 
-#rainbow {
-}
-
-#pencil {
+button:active {
+  transform: scale(1.1);
+  border: 2px solid salmon;
 }
 
 .slide-container {
   width: 200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #slider {
@@ -131,6 +139,7 @@ button {
   border-radius: 10px;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  margin-top: 30px;
 }
 
 #slider:hover {
@@ -154,4 +163,12 @@ button {
   background-color: salmon; /* Green background */
   border-radius: 50%;
   cursor: pointer; /* Cursor on hover */
+}
+
+#slider-output {
+  margin: 10px;
+  text-align: center;
+  font-size: 26px;
+  color: salmon;
+  font-family: Arial, Helvetica, sans-serif;
 }
